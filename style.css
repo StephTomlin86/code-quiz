@@ -1,0 +1,19 @@
+h1 {
+  text-align: center;
+  color: purple;
+}
+
+button {
+  width: 80%;
+  height: auto;
+  padding: 0.5rem;
+  box-shadow: violet;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
