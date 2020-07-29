@@ -33,7 +33,7 @@ let questions = [
   {
     question:
       "How to write an ‘if’ statement for executing some code if “i” is NOT equal to 5?",
-    choice1: "if(i<>5) ",
+    choice1: "if(i<>5)",
     choice2: "if i<>5",
     choice3: "if(i!=5)",
     choice4: "if i!=5",
