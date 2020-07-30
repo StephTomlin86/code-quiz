@@ -18,7 +18,7 @@ let highScoreList = document.getElementById("highScoreList");
 let highScoreContainer = document.getElementById("highScore");
 let highScoreBtn = document.getElementById("highScoreBtn");
 let returnToStartBtn = document.getElementById("returnToStartBtn");
-let timeLeft = 70;
+let timeLeft = 60;
 
 let questions = [
   {
