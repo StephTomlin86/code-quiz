@@ -20,10 +20,9 @@ let highScoreBtn = document.getElementById("highScoreBtn");
 let returnToStartBtn = document.getElementById("returnToStartBtn");
 let timeLeft = 70;
 
-// The question object was made to store the questions and the button options as an array
 let questions = [
   {
-    question: "Which of the following is not a reserved word in JavaScript",
+    question: "Which of the following is not a reserved word in JavaScript?",
     choice1: "Interface",
     choice2: "Throws",
     choice3: "Program",
@@ -32,7 +31,7 @@ let questions = [
   },
   {
     question:
-      "How to write an ‘if’ statement for executing some code if “i” is NOT equal to 5?",
+      "How do you write an ‘if’ statement for executing some code if “i” is NOT equal to 5?",
     choice1: "if(i<>5)",
     choice2: "if i<>5",
     choice3: "if(i!=5)",
@@ -67,13 +66,10 @@ let questions = [
   },
 ];
 
-// this variable defines the last question
 let lastQuestionIndex = questions.length - 1;
 
-// this variable defines the question that the question the user is currently answering
 let runningQuestionIndex = 0;
 
-// This function will take the key values from my question object and change the question and answer buttons.
 function renderQuestion() {
   let q = questions[runningQuestionIndex];
   question.innerHTML = "<p>" + q.question + "<p>";
@@ -83,31 +79,28 @@ function renderQuestion() {
   choice4.innerHTML = q.choice4;
 }
 
-// This function defines what to do if the user answered the question correctly
 function answerIsCorrect() {
   console.log("correct");
 }
 
-// This function defines what to do if the user answered incorrectly, and deducts 10 seconds from their score.
 function answerIsWrong() {
   console.log("wrong");
   timeLeft -= 10;
 }
 
-// This function will check whether the button clicked defined as correct, or wrong.
 function checkAnswer(answer) {
   if (questions[runningQuestionIndex].correct == answer) {
     answerIsCorrect();
   } else {
     answerIsWrong();
   }
-  // This if statement will render a new question after the previous one was answered, and will clearInterval(timeLeft) after the last question has been answered.
+
   if (runningQuestionIndex < lastQuestionIndex) {
     runningQuestionIndex++;
     renderQuestion();
   } else {
     clearInterval(timeLeft);
-    // This will then trigger the end screen, which will display your score as the remaining time.
+
     questionContainer.classList.add("hide");
     questionContainer.classList.remove("show");
     choices.classList.add("hide");
@@ -120,7 +113,6 @@ function checkAnswer(answer) {
   }
 }
 
-// This function will hide my start button on click, reveal the questions and answer buttons, as well as begin the timer.
 function beginQuiz() {
   countDown();
   renderQuestion();
@@ -236,9 +228,9 @@ function returnToStart() {
   }
 }
 
-//This on click event will trigger the beginQuiz function
+//To begin the quiz, this add Event will trigger
 start.addEventListener("click", beginQuiz);
-//on button click will bring user to highscore screen
+//This high score button allows the viewer to see the high score
 highScoreBtn.addEventListener("click", viewHighScore);
 //when user submits their score & initials, it will save high score to local storage
 initialsBtn.addEventListener("click", addToHighscore);
